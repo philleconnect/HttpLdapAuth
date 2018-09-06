@@ -1,0 +1,5 @@
+#auth    required     /lib/security/pam_ldap.so
+#account required     /lib/security/pam_ldap.so
+@include common-auth
+@include common-account
+@include common-session-noninteractive

@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+
+  http_ldap_auth:
+    build: . #use "/Radius" if you copy this to your main docker-compose-file!
+    #image: philleconnect/http_ladp_auth:latest
+    container_name: http_ldap_auth
+    hostname: http_ldap_auth
+    restart: always
+    ports:
+     - "85:80"
+    env_file:
+     - ./settings.env
+    volumes:
+      - ./html:/var/www/html
+#    networks:
+#      - philleconnect
+
+networks:
+    default:
+        external:
+            name: servercontainers_philleconnect

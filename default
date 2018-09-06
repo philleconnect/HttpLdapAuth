@@ -1,0 +1,14 @@
+server {
+    listen 80;
+    listen [::]:80 default_server;
+    server_name  localhost;
+    root /var/www/html;
+
+    location / {
+        root   /var/www/html;
+        auth_pam              "Interner Bereich: Bitte Benutzername und Passwort eingeben:";
+        auth_pam_service_name "nginx";
+        index  index.html;
+    }
+
+}
