@@ -11,7 +11,6 @@ MAINTAINER Dirk Winkel
 RUN apt-get update && apt-get install -y nginx-full libpam-ldap
 
 COPY debconf_libnss-ldap /root/
-COPY libnss-ldap.conf /root/
 
 COPY default /etc/nginx/sites-available/
 #COPY pam.d_nginx /etc/pam.d/nginx
